@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">
+        coffe_pods
+    </h1>
+    <form action="{% url 'pods_page' %}" method="POST">
+        <label for="prodouct">
+            type:
+        </label>
+        <select name="prodouct" id="">
+            {% for podss in podss %}
+                <option value="prodouct">
+                    {{ podss.prodouct }}
+                </option>
+            {% endfor %}
+        </select>
+        <label for="flavar">
+            flavar:
+        </label>
+        <select name="flavar" id="">
+            {% for podss in podss %}
+                <option value="flavar">
+                    {{ podss.flavar }}
+                </option>
+            {% endfor %}
+        </select>
+        <label for="size">
+            size:
+        </label>
+        <select name="size" id="">
+            {% for podss in podss %}
+                <option value="size">
+                    {{ podss.size }}
+                </option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <a href="{% url 'machine_page' %}">
+        coffe machine
+    </a>
+</body>
+</html>

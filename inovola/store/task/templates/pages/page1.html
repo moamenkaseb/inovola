@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">
+        machine
+    </h1>
+    <form action="{% url 'machine_page' %}" method="POST">
+        {% csrf_token %}
+        <label for="prodouct">
+            prodouct:
+        </label>
+        <select name="prodouct" id="">
+            {% for machines in machines %}
+                <option value="">
+                    {{ machines.prodouct }}
+                </option>
+            {% endfor %}
+        </select>
+        <label for="modeel">
+            model:
+        </label>
+        <select name="modeel" id="">
+            {% for machines in machines %}
+                <option value="">
+                    {{ machines.modeel }}
+                </option>
+            {% endfor %}
+        </select>
+        <label for="water">
+            water_line:
+        </label>
+           <select name="water" id="">
+                {% for machines in machines %}
+                    <option value="">
+                        {{ machines.water }}
+                    </option>
+                {% endfor %}
+           </select>
+           <input type="submit" value="buy">
+    </form>
+    <a href="{% url 'pods_page' %}">
+        coffe_pods
+    </a>
+</body>
+</html>
